@@ -3,7 +3,6 @@ This code is an implementation of policy iteration in the Grid World.
 '''
 __author__ = 'Minsoo Kim'
 __copyright__ = 'Copyright 2019, Simple Reinforcement Learning project'
-__credits__ = ['Jaemin Seol']
 __license__ = 'MIT'
 __version__ = '1.0.0'
 __maintainer__ = 'Minsoo Kim'
