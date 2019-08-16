@@ -18,8 +18,6 @@ discount = 1.
 reward = -1.
 action = [[-1,0], [1,0], [0, -1], [0, 1]]# up, down, left, right
 action_string = ['U', 'D', 'L', 'R']
-policy = np.full((grid_height*grid_width, len(action)), [0.25, 0.25, 0.25, 0.25])# initial policy
-policy_evaluation_iteration = 1000
 
 TOTAL_ITERATION = 10
 GRID_RENDER = True
@@ -32,9 +30,8 @@ class GridWorldMDP():
         self.dis_f = discount_factor
 
 class ValueIteration():
-    def __init__(self, MDP, action, init_policy):
+    def __init__(self, MDP, action):
         self.action = action
-        self.policy = init_policy
         self.MDP = MDP
     
     def value_iteration(self, iteration):
@@ -61,7 +58,7 @@ class ValueIteration():
 def main():                                           
     print("==================== Value Iteration ====================")
     grid_world = GridWorldMDP(grid_width, grid_height, reward, discount)
-    agent = ValueIteration(grid_world, action, policy)
+    agent = ValueIteration(grid_world, action)
     agent.value_iteration(TOTAL_ITERATION)
 
 if __name__=="__main__":
